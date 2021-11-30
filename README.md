@@ -18,10 +18,10 @@ yarn add --dev fake-indexeddb
 
 Functionally, it works exactly like IndexedDB except data is not persisted to disk.
 
-The easiest way to use it is to import `fake-indexeddb/auto`, which will put all the IndexedDB objects in the global scope:
+The easiest way to use it is to use `auto()`, which will put all the IndexedDB objects in the global scope:
 
 ```js
-require("fake-indexeddb/auto");
+require("fake-indexeddb").auto();
 
 var request = indexedDB.open("test", 3);
 request.onupgradeneeded = function () {
@@ -58,12 +58,16 @@ Alternatively, you can import individual objects:
 
 ```js
 var indexedDB = require("fake-indexeddb");
-var IDBKeyRange = require("fake-indexeddb/lib/FDBKeyRange");
+var IDBKeyRange = require("fake-indexeddb/FDBKeyRange");
+
+// or...
+
+import {default as indexedDB, FDBKeyRange as IDBKeyRange} from "fake-indexeddb";
 
 // The rest is the same as above.
 ```
 
-When importing individual classes directly (like `var IDBKeyRange = require("fake-indexeddb/lib/FDBKeyRange");` above), file names of all the objects are like the normal IndexedDB ones except with F replacing I, e.g. `FDBIndex` instead of `IDBIndex`.
+When importing individual classes directly (like `var IDBKeyRange = require("fake-indexeddb/FDBKeyRange");` above), file names of all the objects are like the normal IndexedDB ones except with F replacing I, e.g. `FDBIndex` instead of `IDBIndex`.
 
 ## Quality
 

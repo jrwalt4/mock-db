@@ -2,13 +2,13 @@
     "name": "fake-indexeddb",
     "version": "2.1.1",
     "description": "Fake IndexedDB: a pure JS in-memory implementation of the IndexedDB API",
-    "homepage": "https://github.com/dumbmatter/fakeIndexedDB",
+    "homepage": "https://github.com/jrwalt4/mock-db",
     "repository": {
         "type": "git",
-        "url": "git://github.com/dumbmatter/fakeIndexedDB.git"
+        "url": "git://github.com/jrwalt4/mock-db.git"
     },
     "bugs": {
-        "url": "https://github.com/dumbmatter/fakeIndexedDB/issues"
+        "url": "https://github.com/jrwalt4/mock-db/issues"
     },
     "keywords": [
         "indexeddb",
@@ -20,7 +20,7 @@
         "polyfill",
         "shim"
     ],
-    "main": "build/index.js",
+    "main": "dist",
     "scripts": {
         "build": "rm -rf build && tsc",
         "prepublish": "npm run build && rm -rf build/test",
@@ -35,9 +35,7 @@
     "author": "Jeremy Scheff <jdscheff@gmail.com> (http://dumbmatter.com/)",
     "license": "Apache-2.0",
     "files": [
-        "auto.js",
-        "build",
-        "lib"
+        "dist"
     ],
     "dependencies": {
         "core-js": "^2.4.1",
